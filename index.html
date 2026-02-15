@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The History of 18th Century</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage mode-overview" aria-label="The History of 18th Century interactive timeline">
+      <header class="stage-header">
+        <p id="siteTagline">OUR ROOTS • FLASHLIGHTS</p>
+        <div class="header-controls">
+          <button id="langToggle" class="menu-button" type="button">中文</button>
+          <button id="menuButton" class="menu-button" type="button">TIMELINE</button>
+        </div>
+      </header>
+
+      <div id="overviewView" class="view view-overview">
+        <section class="intro-panel cream">
+          <h1 id="heroTitle">THE HISTORY OF<br />18TH CENTURY.</h1>
+          <p id="heroDescription"></p>
+        </section>
+
+        <section id="chapterScroller" class="chapter-scroller" aria-label="Chapter carousel">
+          <section id="chapterGrid" class="chapter-grid"></section>
+          <p id="scrollHint" class="chapter-scroll-hint">Drag to scroll →</p>
+          <div class="chapter-info">
+            <p id="siteInfo" class="site-info-text"></p>
+            <p id="imageDisclaimer" class="site-info-text"></p>
+            <p class="site-info-text">
+              <span id="contactLabel"></span>
+              <a id="contactEmail" href="mailto:linkesnake@hotmail.com">linkesnake@hotmail.com</a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div id="detailView" class="view view-detail" aria-live="polite">
+        <section class="media-panel">
+          <div class="media-tint"></div>
+          <div class="media-content">
+            <p id="detailPeriodTag" class="period-tag"></p>
+            <h2 id="detailHeadline"></h2>
+            <p id="detailEventTitle" class="detail-sub"></p>
+          </div>
+        </section>
+
+        <section class="info-panel cream">
+          <div class="detail-top-controls">
+            <button id="backButton" class="back-button" type="button">← All Periods</button>
+            <div class="chapter-nav">
+              <button id="prevChapter" class="chapter-nav-btn" type="button">← Prev Chapter</button>
+              <button id="nextChapter" class="chapter-nav-btn" type="button">Next Chapter →</button>
+            </div>
+          </div>
+          <p id="detailYear" class="detail-year"></p>
+          <p id="detailBody" class="detail-body"></p>
+          <section id="detailSections" class="detail-sections" aria-label="Event details"></section>
+          <p id="detailRegion" class="detail-region"></p>
+          <section class="detail-taxonomy" aria-label="Event tags">
+            <div class="detail-tag-row">
+              <p id="typeLabel" class="detail-tag-label">Type</p>
+              <div class="detail-tag-list">
+                <span id="categoryBadge" class="category-badge"></span>
+              </div>
+            </div>
+            <div class="detail-tag-row">
+              <p id="countriesLabel" class="detail-tag-label">Countries</p>
+              <div id="countriesTags" class="detail-tag-list"></div>
+            </div>
+            <div class="detail-tag-row">
+              <p id="figuresLabel" class="detail-tag-label">Key Figures</p>
+              <div id="figuresTags" class="detail-tag-list"></div>
+            </div>
+            <p class="detail-source-row">
+              <span id="sourceLabel" class="detail-tag-label">Source</span>
+              <a id="wikiLink" href="#" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>
+            </p>
+          </section>
+        </section>
+      </div>
+
+      <nav id="timelineRail" class="timeline-rail" aria-label="Year timeline"></nav>
+    </main>
+
+    <template id="chapterTemplate">
+      <article class="chapter-card event-card">
+        <div class="chapter-card-top">
+          <p class="chapter-index"></p>
+          <h3 class="chapter-range"></h3>
+        </div>
+        <div class="chapter-card-bottom">
+          <p class="chapter-title"></p>
+          <p class="chapter-meta"></p>
+          <button class="chapter-button" type="button">Open</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="./assets/data/wiki-details.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
