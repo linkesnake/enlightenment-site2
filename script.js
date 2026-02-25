@@ -1356,6 +1356,25 @@ function applyStaticText() {
   wikiLink.textContent = copy.wikiLabel;
 }
 
+function replayHeroIntroAnimation() {
+  heroTitle.style.animation = "none";
+  heroDescription.style.animation = "none";
+
+  heroTitle.style.opacity = "0";
+  heroTitle.style.filter = "blur(10px)";
+  heroTitle.style.transform = "translateY(16px) scale(1.02)";
+
+  heroDescription.style.opacity = "0";
+  heroDescription.style.filter = "blur(8px)";
+  heroDescription.style.transform = "translateY(12px) scale(1.01)";
+
+  void heroTitle.offsetWidth;
+  void heroDescription.offsetWidth;
+
+  heroTitle.style.animation = "filmReveal 980ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms forwards";
+  heroDescription.style.animation = "filmReveal 860ms cubic-bezier(0.2, 0.7, 0.2, 1) 360ms forwards";
+}
+
 function renderTags(container, values) {
   container.innerHTML = "";
   values.forEach((value) => {
@@ -1728,6 +1747,7 @@ function bindGlobalInteractions() {
   langToggle.addEventListener("click", () => {
     state.lang = state.lang === "en" ? "zh" : "en";
     applyStaticText();
+    replayHeroIntroAnimation();
     renderEventStrip();
     if (state.activePeriod) {
       renderDetail();
